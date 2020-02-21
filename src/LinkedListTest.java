@@ -45,7 +45,7 @@ public class LinkedListTest {
         LinkedList l = new LinkedList();
         l.addLast(new Node("Test"));
         l.addLast(new Node("Another test"));
-        assertEquals("Another test", l.first.getNext().getData());
+        assertEquals("Another test",  l.first.getNext().getData());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class LinkedListTest {
         LinkedList l = new LinkedList();
         l.addLast(new Node("Test"));
         l.addLast(new Node("Another Test"));
-        assertEquals("Test",l.removeFirst());
+        assertEquals("Test",l.removeFirst().getData());
     }
 
 }

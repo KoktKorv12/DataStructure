@@ -8,6 +8,7 @@
 public class LinkedList {
     Node first;
     Node LastNode;
+    int size;
 
     /**
      * Constructor to create an empty list.
@@ -22,11 +23,12 @@ public class LinkedList {
      * @param newNode
      */
     public void addLast(Node newNode) {
+        size ++;
     if(first == null){
         first = newNode;
         LastNode = first;
     } else {
-        LastNode = LastNode.next;
+        LastNode.next = newNode;
         LastNode = newNode;
 
     }
@@ -38,8 +40,16 @@ public class LinkedList {
      * (bad practice, should throw an Exception)
      * @return
      */
+
     public Node removeFirst() {
-        return null;
+        //checks if first is not equal to null
+        //if first is not null, removes first.
+        size --;
+        Node StuffToReturn = first;
+        if (first != null) {
+            first = first.next;
+        }
+        return StuffToReturn;
     }
 
     /**
@@ -49,7 +59,7 @@ public class LinkedList {
      * @return
      */
     public int size() {
-        return 0;
+        return size;
     }
 
     /**
